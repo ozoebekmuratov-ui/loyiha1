@@ -1,0 +1,102 @@
+
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YAKKA MARKET — Onlayn do‘kon</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+<header>
+    <div class="top">
+        <a href="#" class="logo">YAKKA<span>MARKET</span></a>
+
+        <div class="search">
+            <input type="text" id="searchInput"
+                   placeholder="Mahsulotlarni qidiring...">
+            <button onclick="searchProducts()">Qidirish</button>
+        </div>
+
+        <div class="header-actions">
+            <button onclick="showFavorites()">♡ Sevimlilar</button>
+            <button onclick="showCart()">🛒 Savatcha
+                <span id="cartCount">0</span>
+            </button>
+        </div>
+    </div>
+
+    <nav>
+        <a href="#" onclick="filterCategory('Barchasi')">Barchasi</a>
+        <a href="#" onclick="filterCategory('Telefon')">Telefonlar</a>
+        <a href="#" onclick="filterCategory('Kompyuter')">Kompyuterlar</a>
+        <a href="#" onclick="filterCategory('Kiyim')">Kiyimlar</a>
+        <a href="#" onclick="filterCategory('Aksessuar')">Aksessuarlar</a>
+        <a href="#" onclick="filterCategory('Maishiy texnika')">Maishiy texnika</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <div>
+        <p class="tag">YAKKA MARKETGA XUSH KELIBSIZ!</p>
+        <h1>Sevimli mahsulotlaringiz<br>
+            bir joyda!</h1>
+        <p>Qulay xaridlar, ajoyib narxlar va katta tanlov.</p>
+        <button onclick="document.getElementById('products').scrollIntoView()">
+            Xarid qilish
+        </button>
+    </div>
+    <div class="hero-icon">🛍️</div>
+</section>
+
+<section class="categories">
+    <h2>Kategoriyalar</h2>
+    <div class="category-list">
+        <button onclick="filterCategory('Telefon')">📱 Telefonlar</button>
+        <button onclick="filterCategory('Kompyuter')">💻 Kompyuterlar</button>
+        <button onclick="filterCategory('Kiyim')">👕 Kiyimlar</button>
+        <button onclick="filterCategory('Aksessuar')">🎧 Aksessuarlar</button>
+        <button onclick="filterCategory('Maishiy texnika')">🏠 Texnika</button>
+    </div>
+</section>
+
+<main id="products">
+    <div class="section-heading">
+        <h2 id="sectionTitle">Mashhur mahsulotlar</h2>
+        <select id="sortSelect" onchange="sortProducts()">
+            <option value="default">Saralash</option>
+            <option value="cheap">Arzonidan</option>
+            <option value="expensive">Qimmatidan</option>
+        </select>
+    </div>
+
+    <div class="product-grid" id="productList"></div>
+</main>
+
+<section class="cart-section" id="cartSection">
+    <h2>🛒 Savatcham</h2>
+    <div id="cartItems"></div>
+    <h3 id="totalPrice">Jami: 0 so'm</h3>
+    <button class="checkout" onclick="checkout()">Buyurtma berish</button>
+    <button class="close" onclick="hideCart()">Yopish</button>
+</section>
+
+<section class="order-section" id="orderSection">
+    <h2>Buyurtmani rasmiylashtirish</h2>
+    <input id="customerName" placeholder="Ismingiz">
+    <input id="customerPhone" placeholder="Telefon raqamingiz">
+    <input id="customerAddress" placeholder="Yetkazib berish manzili">
+    <button onclick="placeOrder()">Buyurtmani tasdiqlash</button>
+    <button class="close" onclick="closeOrder()">Bekor qilish</button>
+</section>
+
+<footer>
+    <h2>YAKKA MARKET</h2>
+    <p>Har bir xarid — yangi imkoniyat!</p>
+    <p>© 2026 YAKKA MARKET. Barcha huquqlar himoyalangan.</p>
+</footer>
+
+<script src="./script.js"></script>
+</body>
+</html>
